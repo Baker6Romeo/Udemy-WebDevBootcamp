@@ -1,14 +1,18 @@
 a {
   color: #11999E;
-  margin: 0 20px;
-}
-a:link {
+  font-family: 'Raleway', sans-serif;
+  margin: 10px 20px;
   text-decoration: none;
 }
+a:hover {
+  color: #EAF6F6
+}
 body {
+  color: #40514E;
   margin: 0;
   text-align: center;
   font-family: 'EB Garamond', serif;
+  font-size: 1.25em;
 }
 h1 {
   color: #66BFBF;
@@ -22,20 +26,20 @@ h2 {
   font-family: 'Raleway', sans-serif;
   font-size: 2rem;
   font-weight: normal;
-  margin: 50px auto;
+  padding-bottom: 10px;
 }
 h3 {
   color: #11999E;
   font-family: 'Raleway', sans-serif;
 }
 hr {
-  border: 7px #EAF6F6;
-  border-style: dotted none none none;
+  border: 7px #EAF6F6 dotted;
+  border-bottom: none;
   margin: 100px auto;
   width: 5%;
 }
 p {
-  color: #40514E;
+  line-height: 2;
 }
 
 .bottom-cloud {
@@ -45,7 +49,7 @@ p {
 }
 .bottom-container{
   background-color: #66BFBF;
-  padding-top: 10px;
+  padding: 50px 0 20px;
 }
 .btn {
   background: #3498db;
@@ -54,10 +58,10 @@ p {
   background-image: -ms-linear-gradient(top, #11cdd4, #11999e);
   background-image: -o-linear-gradient(top, #11cdd4, #11999e);
   background-image: linear-gradient(to bottom, #11cdd4, #11999e);
-  -webkit-border-radius: 28;
-  -moz-border-radius: 28;
-  border-radius: 28px;
-  font-family: Arial;
+  -webkit-border-radius: 8;
+  -moz-border-radius: 8;
+  border-radius: 8px;
+  font-family: 'Raleway', sans-serif;
   color: #ffffff;
   font-size: 20px;
   padding: 10px 20px 10px 20px;
@@ -73,6 +77,8 @@ p {
   background-image: linear-gradient(to bottom, #11999e, #2bc4ad);
   text-decoration: none;
 }
+.footer-link {
+}
 .headshot {
   border-radius: 100%;
 }
@@ -87,20 +93,19 @@ p {
   text-align: center;
 }
 .middle-container{
-  padding-bottom: 60px;
+  margin: 100px 0;
 }
 .pro {
   text-decoration: underline;
 }
 .skill-row {
-  line-height: 2;
   margin: 100px auto 100px auto;
   text-align: left;
   width: 50%;
 }
 .top-cloud {
   position: absolute;
-  right: 300px;
+  right: 350px;
   top: 50px;
 }
 .top-container{
@@ -111,10 +116,16 @@ p {
 
 #bio {
   margin: 16px auto 16px auto;
-  width: 33%;
+  width: 50%;
+}
+#contact-msg {
+  width: 40%;
+  margin: 40px auto 60px;
 }
 #copyright {
   color: #EAF6F6;
+  font-size: 0.75rem;
+  padding: 20px 0;
 }
 #subheading {
   margin-top: 0;
