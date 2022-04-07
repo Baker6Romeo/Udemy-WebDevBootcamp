@@ -1,28 +1,46 @@
 a {
-  color: #78938A;
+  color: #11999E;
+  margin: 0 20px;
+}
+a:link {
+  text-decoration: none;
 }
 body {
-  background-color: #F1DDBF;
   margin: 0;
   text-align: center;
   font-family: 'EB Garamond', serif;
 }
+button {
+  background: linear-gradient(to bottom, 0 #66BFBF, 100% #11999E);
+  background-color: #66BFBF;
+  border-radius: 8px;
+}
 h1 {
-  color: #525E75;
+  color: #66BFBF;
   font-family: 'Grape Nuts', cursive;
   font-size: 5.625rem;
   line-height: 2;
   margin: 50px auto 0 auto;
 }
 h2 {
-  color: #525E75;
+  color: #66BFBF;
   font-family: 'Raleway', sans-serif;
   font-size: 2rem;
   font-weight: normal;
+  margin: 50px auto;
 }
 h3 {
-  color: #78938A;
+  color: #11999E;
   font-family: 'Raleway', sans-serif;
+}
+hr {
+  border: 7px #EAF6F6;
+  border-style: dotted none none none;
+  margin: 100px auto;
+  width: 5%;
+}
+p {
+  color: #40514E;
 }
 
 .bottom-cloud {
@@ -31,6 +49,8 @@ h3 {
   bottom: 300px;
 }
 .bottom-container{
+  background-color: #66BFBF;
+  padding-top: 10px;
 }
 .headshot {
   border-radius: 100%;
@@ -42,10 +62,11 @@ h3 {
 }
 .img-craftsmanship {
   float: left;
-  margin-right: 30px;
-  width: 25%;
+  width: 50%;
+  text-align: center;
 }
 .middle-container{
+  padding-bottom: 60px;
 }
 .pro {
   text-decoration: underline;
@@ -62,6 +83,18 @@ h3 {
   top: 50px;
 }
 .top-container{
+  background-color: #EAF6F6;
   position: relative;
   padding-top: 100px;
+}
+
+#bio {
+  margin: 16px auto 16px auto;
+  width: 33%;
+}
+#copyright {
+  color: #EAF6F6;
+}
+#subheading {
+  margin-top: 0;
 }
