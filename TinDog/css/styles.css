@@ -55,6 +55,9 @@ p {
   margin: 20px 20px 50px;
   width: 15%;
 }
+.pricing-column {
+  padding: 3% 2%;
+}
 
 .navbar {
   padding: 0 0 4.5rem;
@@ -98,7 +101,7 @@ p {
 }
 
 #pricing {
-  padding: 7% 15%;
+  padding: 100px;
 }
 
 #testimonials {
