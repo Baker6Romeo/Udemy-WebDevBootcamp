@@ -30,8 +30,7 @@ p {
 }
 
 .container-fluid {
-  padding: 3% 15%;
-  padding-bottom: 0;
+  padding: 3% 15% 7%;
 }
 
 .download-button {
@@ -86,8 +85,10 @@ p {
 }
 
 .title-image {
+  position: absolute;
+  right: 25%;
   transform: rotate(25deg);
-  width: 60%;
+  width: 20%;
 }
 
 /* ----------------------------------------------------- ids ------------------------------------------------------ */
@@ -95,7 +96,6 @@ p {
   background-color: #fff;
   padding: 7% 15%;
   position: relative;
-  z-index: 1;
 }
 
 #press {
