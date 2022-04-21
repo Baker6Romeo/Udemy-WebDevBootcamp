@@ -35,6 +35,9 @@ p {
 
 .cta-heading{
   color: #fff;
+  line-height: 1.5;
+  font-size: 3.5rem;
+  font-weight: 900;
 }
 
 .download-button {
