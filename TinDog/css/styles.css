@@ -1,22 +1,10 @@
 /* ------------------------------------------------- components --------------------------------------------------- */
 body {
   font-family: 'Montserrat', sans-serif;
+  text-align: center;
 }
 
-h1 {
-  font-size: 3.5rem;
-  font-weight: 900;
-  line-height: 1.5;
-}
-
-h2 {
-  font-size: 3rem;
-  font-weight: 700;
-  line-height: 1.5;
-}
-
-h3 {
-  font-size: 1.5rem;
+h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
 }
 
@@ -24,20 +12,25 @@ p {
   color: #8f8f8f;
 }
 
-/* --------------------------------------------------- classes ---------------------------------------------------- */
-.carousel-item {
-  padding: 7% 15%;
+/* --------------------------------------------------- classes --------------------------------------------------- */
+
+.big-heading {
+    font-size: 3.5rem;
+    font-weight: 900;
+    line-height: 1.5;
+}
+
+.collored-section {
+  background-color: #ff4c68;
+  color: #fff;
 }
 
 .container-fluid {
-  padding: 3% 15% 7%;
+  padding: 7% 15%;
 }
 
-.cta-heading{
-  color: #fff;
-  line-height: 1.5;
-  font-size: 3.5rem;
-  font-weight: 900;
+#title .container-fluid {
+  padding: 3% 15% 7%;
 }
 
 .download-button {
@@ -46,7 +39,6 @@ p {
 
 .feature-box {
   padding: 5%;
-  text-align: center;
 }
 
 .feature-icon {
@@ -62,10 +54,20 @@ p {
   padding: 0 10px;
 }
 
+.feature-title {
+  font-size: 1.5rem;
+}
+
 .press-icons {
   margin: 20px 20px 50px;
   width: 15%;
 }
+
+.price-heading {
+  font-size: 3rem;
+  line-height: 1.5;
+}
+
 .pricing-column {
   padding: 3% 2%;
 }
@@ -89,10 +91,20 @@ p {
   font-weight: 100;
 }
 
+.section-heading {
+    font-size: 3rem;
+    line-height: 1.5;
+}
+
 .testimonials-image {
   border-radius: 100%;
   margin: 20px;
   width: 10%;
+}
+
+.testimonial-text {
+    font-size: 3rem;
+    line-height: 1.5;
 }
 
 .title-image {
@@ -102,29 +114,28 @@ p {
   width: 20%;
 }
 
+.white-section {
+  background-color: #fff;
+}
+
 /* ---------------------------------------------------- ids ------------------------------------------------------ */
 
 #cta {
   background-color: #ff4c68;
-  padding: 7% 15%;
-  text-align: center;
+  color: #fff;
 }
 
 #features {
   background-color: #fff;
-  padding: 7% 15%;
   position: relative;
 }
 
 #footer {
-  padding: 7% 15%;
-  text-align: center;
 }
 
 #press {
   background-color: #ef8172;
   padding-bottom: 3%;
-  text-align: center;
 }
 
 #pricing {
@@ -134,18 +145,18 @@ p {
 #testimonials {
   background-color: #ef8172;
   color: #fff;
-  text-align: center;
 }
 
 #title {
   background-color: #ff4c68;
   color: #fff;
+  text-align: left;
 }
 
 /* ------------------------------------------------ responsiveness ----------------------------------------------- */
 
 @media (max-width: 991px){
-  
+
   .title-image {
     position:static;
     transform: rotate(0);
