@@ -20,8 +20,8 @@ p {
     line-height: 1.5;
 }
 
-.collored-section {
-  background-color: #ff4c68;
+.colored-section {
+  background-color: #ef8172;
   color: #fff;
 }
 
@@ -120,13 +120,7 @@ p {
 
 /* ---------------------------------------------------- ids ------------------------------------------------------ */
 
-#cta {
-  background-color: #ff4c68;
-  color: #fff;
-}
-
 #features {
-  background-color: #fff;
   position: relative;
 }
 
@@ -134,7 +128,6 @@ p {
 }
 
 #press {
-  background-color: #ef8172;
   padding-bottom: 3%;
 }
 
@@ -143,13 +136,11 @@ p {
 }
 
 #testimonials {
-  background-color: #ef8172;
   color: #fff;
 }
 
 #title {
   background-color: #ff4c68;
-  color: #fff;
   text-align: left;
 }
 
