@@ -11,6 +11,31 @@
     <br><!--creates a space between lines, like hitting enter several times-->
     <hr><!--Horizontal rule. A straight line-->
     <hr size="3" noshade><!--These can have attributes to change how they look-->
+    <h3>Inputs</h3>
+    <input type="button" name="" value="Button">
+    <input type="checkbox" name="" value="">
+    <input type="color" name="" value="">
+    <input type="date" name="" value="">
+    <input type="datetime-local" name="" value="">
+    <input type="email" name="" value="">
+    <input type="file" name="" value="">
+    <br>
+    <input type="image" name="" value="">
+    <input type="month" name="" value="">
+    <input type="number" name="" value="">
+    <input type="password" name="" value="">
+    <input type="radio" name="" value="">
+    <input type="range" name="" value="">
+    <br>
+    <input type="reset" name="" value="Reset">
+    <input type="search" name="" value="">
+    <input type="submit" name="" value="Submit">
+    <input type="tel" name="" value="">
+    <input type="text" name="" value="">
+    <br>
+    <input type="time" name="" value="">
+    <input type="url" name="" value="">
+    <input type="week" name="" value="">
     <center>Horizontally centers everything between the tags</center>
     <em>Emphasis italicizes text, like <i></i> does, but it also tells systems reading the file that the information contained within should be emphasized</em>
     <strong>Bolds text like <b></b>, but also conveys that the contents have strong importance</strong>
@@ -33,5 +58,42 @@
     </ol>
     <a href="HTML - Personal Site\index.html">This is a clickable link!</a>
     <a href="https://agoodmovietowatch.com/" target="_blank">Attributes allow links to open in a new tab</a>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Row 1</th>
+          <th>These are headers</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Table body</td>
+          <td>
+            <table>
+            <tr>
+              <td>Inception 1</td>
+              <td>Inception 2</td>
+            </tr>
+            <tr>
+              <td>Inception 3</td>
+              <td>Inception 4</td>
+            </tr>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <hr>
+    <h3>Basic Mail Form</h3>
+    <form action="mailto:baker6romeo@gmail.com" method="post" enctype="text/plain">
+      <label for="">Name:</label>
+      <input type="text" name="Name" value=""><br>
+      <label for="">Email:</label>
+      <input type="email" name="Email" value=""><br>
+      <label for="">Message:</label><br>
+      <textarea name="Message" rows="10" cols="30"></textarea><br>
+      <input type="submit" name="" value="Submit">
+    </form>
+    <hr>
   </body>
 </html>
