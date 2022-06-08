@@ -23,8 +23,8 @@ app.get("/bmiCalculator", function(req, res) {
 })
 
 app.post("/bmiCalculator", function(req, res) {
-  var height = Number(req.body.height);
-  var weight = Number(req.body.weight);
+  var height = parseFloat(req.body.height);
+  var weight = parseFloat(req.body.weight);
 
   var bmi = weight / Math.pow(height, 2) * 703;
 
