@@ -48,11 +48,11 @@ app.post("/", function(req, res) {
     if (response.errors.length > 0){
       console.log(response.errors);
       console.log("We messed up!");
-      res.send("ERROR!!!")
+      res.sendFile(__dirname + "/failure.html")
     } else {
       console.log(response);
       console.log("Perfect!");
-      res.send("PERFECT!")
+      res.sendFile(__dirname + "/success.html")
     }
   };
 
