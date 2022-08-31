@@ -48,15 +48,19 @@ app.post("/", function(req, res) {
     if (response.errors.length > 0){
       console.log(response.errors);
       console.log("We messed up!");
-      res.sendFile(__dirname + "/failure.html")
+      res.sendFile(__dirname + "/failure.html");
     } else {
       console.log(response);
       console.log("Perfect!");
-      res.sendFile(__dirname + "/success.html")
+      res.sendFile(__dirname + "/success.html");
     }
   };
 
   run();
+});
+
+app.post("/failure", function(req, res){
+  res.redirect("/");
 });
 
 app.listen(3000, function() {
