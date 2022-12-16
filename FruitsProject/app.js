@@ -1,25 +1,49 @@
-const { MongoClient } = require("mongodb");
-const assert = require('assert');
+const mongoose = require('mongoose');
 // Replace the uri string with your connection string.
-const uri =
-  "mongodb://localhost:27017";
+const url = "mongodb://localhost:27017";
 
-const client = new MongoClient(uri);
-async function run() {
-  try {
-    const db = client.db('fruitsDB');
-    const fruits = db.collection('fruits');
-    const recalledFruits = db.collection('fruits').find({name: "Orange"});
-    // const insertFruits = await fruits.insertMany([
-    //         { name: "Apple", score: 8, review: "Great fruit"},
-    //         { name: "Orange", score: 6, review: "Kinda sour"},
-    //         { name: "Banana", score: 9, review: "Great stuff!!!"}
-    //      ]);
-    // console.log(insertFruits);
-    console.log(recalledFruits);
-  } finally {
-    // Ensures that the client will close when you finish/error
-    await client.close();
-  }
+mongoose.set("strictQuery", false);
+mongoose.connect(url + "/fruitsDB");
+
+const fruitSchema = new mongoose.Schema ({
+  name: String,
+  rating: Number,
+  review: String
+});
+
+const Fruit = new mongoose.model("Fruit", fruitSchema);
+
+const fruit = new Fruit({
+  name: "Apple",
+  rating: 8,
+  review: "Great fruit"
+});
+
+fruit.save();
+
+
+
+const insertDocuments = function(db, callback) {
+
+  const collection = db.collection('fruits');
+
+  collection.insertMany([{
+      name: "Apple",
+      score: 8,
+      review: "Great fruit"
+    },
+    {
+      name: "Orange",
+      score: 6,
+      review: "Kinda sour"
+    },
+    {
+      name: "Banana",
+      score: 9,
+      review: "Great stuff!!!"
+    }
+  ], function(err, result) {
+    assert.equal(err, null);
+    assert.equal(3, result.result.n);
+  });
 }
-run().catch(console.dir);
