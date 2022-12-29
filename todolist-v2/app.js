@@ -36,20 +36,21 @@ const deleteMsg = new Item ({
 
 const defaultItems = [welcomeMsg, addMsg, deleteMsg];
 
-// Item.insertMany(defaultItems, (err, docs) => {
-//   if(err){
-//     console.log(err);
-//   }else{
-//     console.log(docs);
-//   }
-// });
-
 app.get("/", function(req, res) {
 
   Item.find({}, (err, foundItems) => {
     if(err){
       console.log(err);
-    }else{
+    }else if ( foundItems.length < 1 ){
+      Item.insertMany(defaultItems, (err, docs) => {
+        if(err){
+          console.log(err);
+        }else{
+          console.log(docs);
+        }
+      });
+      res.redirect("/");
+    } else {
       res.render("list", {listTitle: "Today", newListItems: foundItems});
     }
   });
