@@ -17,8 +17,11 @@ const url = "mongodb://localhost:27017";
 mongoose.set("strictQuery", false);
 mongoose.connect(url + "/todolistDB");
 
-const items = ["Buy Food", "Cook Food", "Eat Food"];
-const workItems = [];
+const itemSchema = {
+  name: String
+};
+
+const Item = new mongoose.model("Item", itemSchema);
 
 app.get("/", function(req, res) {
 
