@@ -36,10 +36,19 @@ const deleteMsg = new Item ({
 
 const defaultItems = [welcomeMsg, addMsg, deleteMsg];
 
-Item.insertMany(defaultItems, (err, docs) => {
+// Item.insertMany(defaultItems, (err, docs) => {
+//   if(err){
+//     console.log(err);
+//   }else{
+//     console.log(docs);
+//   }
+// });
+
+Item.find({}, (err, docs) => {
   if(err){
     console.log(err);
   }else{
+    console.log("I found them! Here they are:");
     console.log(docs);
   }
 });
