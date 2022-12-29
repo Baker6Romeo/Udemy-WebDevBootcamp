@@ -22,6 +22,18 @@ const itemSchema = {
 
 const Item = new mongoose.model("Item", itemSchema);
 
+const buyFood = new Item ({
+  name: "Buy Food"
+});
+
+const cookFood = new Item ({
+  name: "Cook Food"
+});
+
+const eatFood = new Item ({
+  name: "Eat Food"
+});
+
 app.get("/", function(req, res) {
 
   res.render("list", {listTitle: "Today", newListItems: items});
