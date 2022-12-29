@@ -34,6 +34,16 @@ const deleteMsg = new Item ({
   name: "<-- Hit this to delete an item."
 });
 
+const defaultItems = [welcomeMsg, addMsg, deleteMsg];
+
+Item.insertMany(defaultItems, (err, docs) => {
+  if(err){
+    console.log(err);
+  }else{
+    console.log(docs);
+  }
+});
+
 app.get("/", function(req, res) {
 
   res.render("list", {listTitle: "Today", newListItems: items});
