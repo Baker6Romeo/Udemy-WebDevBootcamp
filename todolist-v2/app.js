@@ -44,18 +44,15 @@ const defaultItems = [welcomeMsg, addMsg, deleteMsg];
 //   }
 // });
 
-Item.find({}, (err, docs) => {
-  if(err){
-    console.log(err);
-  }else{
-    console.log("I found them! Here they are:");
-    console.log(docs);
-  }
-});
-
 app.get("/", function(req, res) {
 
-  res.render("list", {listTitle: "Today", newListItems: items});
+  Item.find({}, (err, foundItems) => {
+    if(err){
+      console.log(err);
+    }else{
+      res.render("list", {listTitle: "Today", newListItems: foundItems});
+    }
+  });
 
 });
 
