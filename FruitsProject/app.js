@@ -8,7 +8,7 @@ mongoose.connect(url + "/fruitsDB");
 const fruitSchema = new mongoose.Schema ({
   name: {
     type: String,
-    required: true
+    required: [true, "No name specified."]
   },
   rating: {
     type: Number,
@@ -25,7 +25,7 @@ const fruit = new Fruit({
   review: "Pretty solid as a fruit"
 });
 
-fruit.save();
+// fruit.save();
 
 const personSchema = new mongoose.Schema ({
   name: String,
@@ -52,4 +52,12 @@ Fruit.find((err, fruits) => {
     });
 
   }
-})
+});
+
+Fruit.updateOne({name: "Kiwi"}, {review: "I don't like it..."}, (err) => {
+  if(err){
+    console.log(err);
+  }else{
+    console.log("Successful update.");
+  }
+});
