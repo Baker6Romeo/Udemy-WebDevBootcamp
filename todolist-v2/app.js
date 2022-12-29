@@ -1,7 +1,6 @@
 //jshint esversion:6
 
 const bodyParser = require("body-parser");
-const date = require(__dirname + "/date.js");
 const express = require("express");
 const mongoose = require('mongoose');
 
@@ -25,9 +24,7 @@ const Item = new mongoose.model("Item", itemSchema);
 
 app.get("/", function(req, res) {
 
-const day = date.getDate();
-
-  res.render("list", {listTitle: day, newListItems: items});
+  res.render("list", {listTitle: "Today", newListItems: items});
 
 });
 
