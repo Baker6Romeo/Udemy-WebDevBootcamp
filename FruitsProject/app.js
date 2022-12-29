@@ -54,10 +54,18 @@ Fruit.find((err, fruits) => {
   }
 });
 
-Fruit.updateOne({name: "Kiwi"}, {review: "I don't like it..."}, (err) => {
+// Fruit.updateOne({name: "Kiwi"}, {review: "I don't like it..."}, (err) => {
+//   if(err){
+//     console.log(err);
+//   }else{
+//     console.log("Successful update.");
+//   }
+// });
+
+Person.deleteMany({name: "John"}, (err) => {
   if(err){
     console.log(err);
   }else{
-    console.log("Successful update.");
+    console.log("Successful delete.");
   }
 });
