@@ -45,10 +45,21 @@ const banana = new Fruit({
   review: "Weird texture"
 });
 
-Fruit.insertMany([kiwi, orange, banana], (err) => {
-  if (err) {
-    cosole.log(err);
+// Fruit.insertMany([kiwi, orange, banana], (err) => {
+//   if (err) {
+//     cosole.log(err);
+//   } else {
+//     console.log("Fruits logged");
+//   }
+// })
+
+Fruit.find((err, fruits) => {
+  if (err){
+    console.log(err);
   } else {
-    console.log("Fruits logged");
+    fruits.forEach((fruit) => {
+      console.log(fruit.name);
+    });
+
   }
 })
