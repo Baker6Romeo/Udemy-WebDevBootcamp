@@ -56,7 +56,9 @@ const banana = new Fruit({
 Fruit.find((err, fruits) => {
   if (err){
     console.log(err);
+    mongoose.disconnect();
   } else {
+    mongoose.disconnect();
     fruits.forEach((fruit) => {
       console.log(fruit.name);
     });
