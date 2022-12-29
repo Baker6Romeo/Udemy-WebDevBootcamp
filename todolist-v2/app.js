@@ -73,6 +73,16 @@ app.post("/", function(req, res){
   //   res.redirect("/");
   // }
 });
+app.post("/delete", (req, res) =>{
+  Item.deleteOne({_id:req.body.checkbox}, (err) => {
+    if(err){
+      console.log(err);
+    }else{
+      console.log("Deletion successful.");
+    }
+    res.redirect("/");
+  });
+});
 
 app.get("/work", function(req,res){
   res.render("list", {listTitle: "Work List", newListItems: workItems});
