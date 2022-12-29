@@ -22,16 +22,16 @@ const itemSchema = {
 
 const Item = new mongoose.model("Item", itemSchema);
 
-const buyFood = new Item ({
-  name: "Buy Food"
+const welcomeMsg = new Item ({
+  name: "Welcome to your ToDo List!"
 });
 
-const cookFood = new Item ({
-  name: "Cook Food"
+const addMsg = new Item ({
+  name: "Hit the + button to add a new item."
 });
 
-const eatFood = new Item ({
-  name: "Eat Food"
+const deleteMsg = new Item ({
+  name: "<-- Hit this to delete an item."
 });
 
 app.get("/", function(req, res) {
