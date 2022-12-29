@@ -1,8 +1,9 @@
 //jshint esversion:6
 
-const express = require("express");
 const bodyParser = require("body-parser");
 const date = require(__dirname + "/date.js");
+const express = require("express");
+const mongoose = require('mongoose');
 
 const app = express();
 
@@ -10,6 +11,11 @@ app.set('view engine', 'ejs');
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
+
+const url = "mongodb://localhost:27017";
+
+mongoose.set("strictQuery", false);
+mongoose.connect(url + "/todolistDB");
 
 const items = ["Buy Food", "Cook Food", "Eat Food"];
 const workItems = [];
