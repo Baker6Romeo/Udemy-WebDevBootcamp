@@ -74,7 +74,8 @@ app.post("/", function(req, res){
   // }
 });
 app.post("/delete", (req, res) =>{
-  Item.deleteOne({_id:req.body.checkbox}, (err) => {
+  const checkboxId = req.body.checkbox;
+  Item.findByIdAndRemove(checkboxId, (err) => {
     if(err){
       console.log(err);
     }else{
