@@ -57,6 +57,12 @@ app.get("/", function(req, res) {
 
 });
 
+app.get("/:listName", (req,res) => {
+  console.log(req.params.listName);
+  // const listName = req.params.listName;
+  // res.render(listName, {listTitle: '$(listName) List', newListItems: defaultItems});
+});
+
 app.post("/", function(req, res){
 
   const item = new Item({
@@ -65,14 +71,8 @@ app.post("/", function(req, res){
 
   item.save();
   res.redirect("/");
-  // if (req.body.list === "Work") {
-  //   workItems.push(item);
-  //   res.redirect("/work");
-  // } else {
-  //   items.push(item);
-  //   res.redirect("/");
-  // }
 });
+
 app.post("/delete", (req, res) =>{
   const checkboxId = req.body.checkbox;
   Item.findByIdAndRemove(checkboxId, (err) => {
@@ -83,10 +83,6 @@ app.post("/delete", (req, res) =>{
     }
     res.redirect("/");
   });
-});
-
-app.get("/work", function(req,res){
-  res.render("list", {listTitle: "Work List", newListItems: workItems});
 });
 
 app.get("/about", function(req, res){
