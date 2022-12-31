@@ -36,6 +36,12 @@ const deleteMsg = new Item ({
 
 const defaultItems = [welcomeMsg, addMsg, deleteMsg];
 
+const listSchema = {
+  name: String,
+  items: [itemSchema]
+}
+const List = new mongoose.model("List", listSchema);
+
 app.get("/", function(req, res) {
 
   Item.find({}, (err, foundItems) => {
@@ -58,8 +64,21 @@ app.get("/", function(req, res) {
 });
 
 app.get("/:listName", (req,res) => {
-  console.log(req.params.listName);
-  // const listName = req.params.listName;
+  const listName = req.params.listName;
+  List.find({name: listName}, (err, foundItems) => {
+    if(err){
+      console.log(err);
+    }else if ( foundItems.length < 1 ){
+      const newList = new List({
+        name: listName,
+        items: defaultItems
+      })
+      newList.save();
+      console.log('New ${listName} list created');
+    } else {
+      console.log('${listName} already exists.');
+    }
+  });
   // res.render(listName, {listTitle: '$(listName) List', newListItems: defaultItems});
 });
 
