@@ -67,7 +67,9 @@ app.get("/:listName", (req,res) => {
   const listName = req.params.listName;
   List.findOne({name: listName}, (err, foundList) => {
     if(!err){
+      console.log("error");
       if (!foundList){
+        console.log("Didn't find list.");
         const newList = new List({
           name: listName,
           items: defaultItems
@@ -80,7 +82,6 @@ app.get("/:listName", (req,res) => {
     } else {
       console.log(err);
     }
-    res.render("list", {listTitle: foundList.name, newListItems: foundList.items});
   });
 });
 
@@ -89,9 +90,19 @@ app.post("/", function(req, res){
   const item = new Item({
     name: req.body.newItem
   });
+  const listName = req.body.list;
 
-  item.save();
-  res.redirect("/");
+  if(listName === "Today"){
+    item.save();
+    res.redirect("/");
+  } else {
+    List.findOne({name: listName}, (err, foundList) => {
+      console.log(foundList);
+      foundList.items.push(item);
+      foundList.save();
+      res.redirect('/' + listName);
+    });
+  }
 });
 
 app.post("/delete", (req, res) =>{
