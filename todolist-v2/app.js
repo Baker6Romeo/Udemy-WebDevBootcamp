@@ -65,21 +65,23 @@ app.get("/", function(req, res) {
 
 app.get("/:listName", (req,res) => {
   const listName = req.params.listName;
-  List.find({name: listName}, (err, foundItems) => {
-    if(err){
-      console.log(err);
-    }else if ( foundItems.length < 1 ){
-      const newList = new List({
-        name: listName,
-        items: defaultItems
-      })
-      newList.save();
-      console.log('New ${listName} list created');
+  List.findOne({name: listName}, (err, foundList) => {
+    if(!err){
+      if (!foundList){
+        const newList = new List({
+          name: listName,
+          items: defaultItems
+        })
+        newList.save();
+        res.redirect('/' + listName);
+      } else {
+        res.render("list", {listTitle: foundList.name, newListItems: foundList.items});
+      }
     } else {
-      console.log('${listName} already exists.');
+      console.log(err);
     }
+    res.render("list", {listTitle: foundList.name, newListItems: foundList.items});
   });
-  // res.render(listName, {listTitle: '$(listName) List', newListItems: defaultItems});
 });
 
 app.post("/", function(req, res){
