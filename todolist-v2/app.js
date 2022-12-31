@@ -3,6 +3,7 @@
 const bodyParser = require("body-parser");
 const express = require("express");
 const mongoose = require('mongoose');
+const _ = require('lodash');
 
 const app = express();
 
@@ -64,7 +65,7 @@ app.get("/", function(req, res) {
 });
 
 app.get("/:listName", (req,res) => {
-  const listName = req.params.listName;
+  const listName = _.capitalize(req.params.listName);
   List.findOne({name: listName}, (err, foundList) => {
     if(!err){
       console.log("error");
