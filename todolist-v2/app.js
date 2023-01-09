@@ -12,10 +12,14 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
-const url = "mongodb://localhost:27017";
+const url = "mongodb+srv://cluster0.tkvg07n.mongodb.net/todolistDB?authSource=%24external&authMechanism=MONGODB-X509&retryWrites=true&w=majority";
+const credentials = "C:\\Users\\Baker6Romeo\\Documents\\Development\\Udemy\\WebDevBootcamp\\X509-cert-7837111515174352599.pem";
 
 mongoose.set("strictQuery", false);
-mongoose.connect(url + "/todolistDB");
+mongoose.connect(url, {
+  sslKey: credentials,
+  sslCert: credentials
+});
 
 const itemSchema = {
   name: String
