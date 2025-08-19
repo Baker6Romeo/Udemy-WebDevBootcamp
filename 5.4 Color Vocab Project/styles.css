@@ -1,0 +1,25 @@
+/* ELEMENTS */
+img {
+  height: 200px;
+  width: 200px;
+}
+/* CLASSES */
+.color-title {
+  font-weight: normal;
+}
+/* ID'S */
+#red {
+  color: red;
+}
+#blue {
+  color: blue;
+}
+#orange {
+  color: orange;
+}
+#green {
+  color:green;
+}
+#yellow {
+  color: yellow;
+}
